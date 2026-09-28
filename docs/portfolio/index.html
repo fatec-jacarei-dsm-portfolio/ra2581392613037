@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="geometric-canvas"></canvas>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </div>
+
+        <ul class="sidebar-nav" id="sidebarNav">
+            <div class="active-ball-indicator" id="ballIndicator"></div>
+
+            <li class="sidebar-item active" data-section="hero">
+                <a href="#hero" class="sidebar-link" title="Início">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </a>
+            </li>
+            <li class="sidebar-item" data-section="sobre">
+                <a href="#sobre" class="sidebar-link" title="Sobre Mim">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+            </li>
+            <li class="sidebar-item" data-section="projetos">
+                <a href="#projetos" class="sidebar-link" title="Projetos">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </a>
+            </li>
+            <li class="sidebar-item" data-section="jornada">
+                <a href="#jornada" class="sidebar-link" title="Jornada">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </a>
+            </li>
+            <li class="sidebar-item" data-section="contato">
+                <a href="#contato" class="sidebar-link" title="Contato">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </li>
+        </ul>
+
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Alternar Tema">
+            <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </aside>
+
+    <main class="main-wrapper">
+        <div class="container">
+
+            <section class="hero" id="hero">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <span>Estudante de Programação Full-Stack</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Olá, eu sou <br>
+                        <span class="highlight" id="userName">Vinicius Guin</span>
+                    </h1>
+
+                    <p class="hero-pitch">
+                        <strong>Em formação contínua:</strong> Estudante de Desenvolvimento Full-Stack dedicado à construção de uma base técnica sólida, por meio de estudo constante e prática orientada a projetos reais.
+                    </p>
+
+                    <div class="hero-actions">
+                        <div class="btn-group-social">
+                            <a href="#projetos" class="btn btn-primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                Ver Projetos
+                            </a>
+                            <a href="https://github.com/ViniciusGuin" target="_blank" rel="noopener" class="btn btn-social">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/PERFIL" target="_blank" rel="noopener" class="btn btn-social">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Sobre Mim</h2>
+                </div>
+
+                <div class="about-header-grid">
+                    <div class="about-side">
+                        <div class="profile-photo-container">
+                            <img src="assets/img/profile/profile.jpg" alt="Foto de perfil" class="profile-photo">
+                        </div>
+
+                        <div class="ratings-box">
+                            <h3 class="ratings-title">Ratings de Xadrez</h3>
+                            <div class="rating-item">
+                                <span class="rating-label">Nacional (CBX)</span>
+                                <span class="rating-value">1808</span>
+                            </div>
+                            <div class="rating-item">
+                                <span class="rating-label">Internacional (FIDE)</span>
+                                <span class="rating-value">1598</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-bio">
+                        <p>
+                            Sou estudante de Desenvolvimento de Software Multiplataforma, com foco em tecnologias full-stack. Dedico-me ao estudo contínuo de novas ferramentas e à aplicação prática desses conhecimentos no desenvolvimento de projetos. 
+                        </p>
+                        <br>
+                        <p>
+                            Meu objetivo atual é consolidar os fundamentos abordados ao longo da graduação antes de avançar para tecnologias e ferramentas mais avançadas.
+                        </p>
+                        <br>
+                        <p>
+                            Fora da programação, sou enxadrista, conquistei títulos em campeonatos nacionais, atualmente disputo campeonatos regionais e locais. A prática do xadrez desenvolveu meu raciocínio estratégico, disciplina e capacidade de tomada de decisão, competências que aplico na resolução de problemas.
+                        </p>
+
+                        <div class="objectives-box">
+                            <h3 class="objectives-title">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                Objetivos & Áreas de Interesse
+                            </h3>
+                            <p>Busco uma oportunidade de estágio na área de desenvolvimento Full-Stack, com interesse particular em aprofundar conhecimentos em Cibersegurança.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-extra-wrapper" id="aboutExpandedContent">
+                    <div class="about-extra-grid">
+                        <div class="card">
+                            <h3>Conhecimentos Técnicos</h3>
+                            <div class="skills-grid" id="skillsGrid"></div>
+                        </div>
+
+                        <div class="card">
+                            <h3>Cursos & Certificações</h3>
+                            <ul>
+                            <li><strong><p class="cert-text">Certificate EducationFirst Level 16 - Upper Advanced - CEFR Level C2 - 10 de Outubro de 2024</p></strong></li>
+                            <li><strong><p class="cert-text">Certificado de Git oferecido pelo Cursa - 12 de Fevereiro de 2026</p></strong></li>
+                            <li><strong><p class="cert-text">Certificado ITE 7.01 oferecido pelo Cisco Networking Academy - 18 de Julho de 2026</p></strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>Formação Acadêmica</h3>
+                            <ul class="cert-list">
+                                <li class="cert-item">
+                                    <span><strong>E.E. Profª Amância Dias Sampaio:</strong> Ensino médio completo — 2025</span>
+                                </li>
+                                <li class="cert-item">
+                                    <span><strong>FATEC:</strong> Desenvolvimento de Software Multiplataforma — 2º Semestre</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>Idiomas</h3>
+                            <ul class="cert-list">
+                                <li class="cert-item"><span><strong>Português:</strong> Nativo</span></li>
+                                <li class="cert-item"><span><strong>Espanhol:</strong> Nível Avançado</span></li>
+                                <li class="cert-item"><span><strong>Inglês:</strong> Nível Intermediário</span></li>
+                                <li class="cert-item"><span><strong>Japonês:</strong> Nível Iniciante</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="card card-span-2">
+                            <h3>Hobbies & Interesses</h3>
+                            <p class="hobbies-text">Xadrez, aprendizado contínuo, desenho, jogos de lógica e Cibersegurança.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projetos">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Projetos Desenvolvidos</h2>
+                </div>
+
+                <div class="project-filters" id="projectFilters">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="academico">Acadêmicos</button>
+                    <button class="filter-btn" data-filter="profissional">Profissionais</button>
+                    <button class="filter-btn" data-filter="pessoal">Pessoais</button>
+                </div>
+
+                <div class="projects-grid" id="projectsContainer"></div>
+                <p class="projects-empty" id="projectsEmpty" style="display:none;">Nenhum projeto cadastrado nessa categoria ainda.</p>
+            </section>
+
+            <section id="jornada">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Jornada de Estudos</h2>
+                    <div class="journey-controls">
+                        <button class="journey-arrow-btn" id="journeyPrevBtn" title="Anterior">&lt;</button>
+                        <button class="journey-arrow-btn" id="journeyNextBtn" title="Próximo">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="journey-horizontal" id="journeyScrollContainer">
+                    <div class="journey-phase-card">
+                        <span class="phase-number">Fase 01</span>
+                        <h3 class="phase-title">Fundamentos de HTML, CSS e JavaScript</h3>
+                        <p class="phase-desc">Primeiro contato com programação ainda no Ensino Médio, através de HTML, CSS e JavaScript, o que despertou o interesse pela área de Tecnologia da Informação.</p>
+                    </div>
+
+                    <div class="journey-phase-card">
+                        <span class="phase-number">Fase 02</span>
+                        <h3 class="phase-title">Aprofundamento em Desenvolvimento Web e Versionamento</h3>
+                        <p class="phase-desc">Aprofundamento em HTML, CSS e JavaScript, controle de versão com Git e elaboração de documentação técnica de projetos.</p>
+                    </div>
+
+                    <div class="journey-phase-card">
+                        <span class="phase-number">Fase 03</span>
+                        <h3 class="phase-title">TypeScript, Docker e Aprofundamento Técnico</h3>
+                        <p class="phase-desc">Estudo de novas tecnologias, incluindo TypeScript e Docker, com foco na consolidação de conhecimentos técnicos.</p>
+                    </div>
+
+                    <div class="journey-phase-card">
+                        <span class="phase-number">Fase 04</span>
+                        <h3 class="phase-title">Próxima Etapa</h3>
+                        <p class="phase-desc">Novos conteúdos serão adicionados conforme o avanço da formação acadêmica.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Entre em Contato</h2>
+                </div>
+
+                <div class="contact-direct-grid">
+                    <a href="https://github.com/ViniciusGuin" target="_blank" rel="noopener" class="contact-card-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        <span>GitHub</span>
+                    </a>
+
+                    <a href="https://linkedin.com/in/PERFIL" target="_blank" rel="noopener" class="contact-card-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <p class="contact-note">Apenas redes profissionais são divulgadas — e-mail e telefone não são informados publicamente nesta página.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Portfólio de Estudante Dev. Desenvolvido com HTML, CSS e JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
